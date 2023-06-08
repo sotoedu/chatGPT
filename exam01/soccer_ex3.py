@@ -4,7 +4,7 @@ import openai
 import random
 
 # OpenAI API 설정
-openai.api_key = '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'
+openai.api_key = ''
 
 def generate_soccer_prediction(home_team, away_team):
     prompt = f"Prediction: {home_team} vs {away_team}"
