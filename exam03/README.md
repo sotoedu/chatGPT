@@ -6,19 +6,26 @@ This is an example pet name generator app used in the OpenAI API [quickstart tut
 
 1. If you don’t have Python installed, [install it from here](https://www.python.org/downloads/).
 
-2. Clone this repository.
-
-3. Navigate into the project directory:
+2. Navigate into the project directory:
 
    ```bash
-   $ cd openai-quickstart-python
+   $ mkdir workspace
+   $ cd workspace
+   $ mkdir openai-web
+   $ cd openai-web
    ```
-
-4. Create a new virtual environment:
+   
+3. Create a new virtual environment:
 
    ```bash
    $ python -m venv venv
-   $ . venv/bin/activate
+   $ source venv/bin/activate
+   ```
+
+4. Clone this repository.
+   ```bash
+   $ git clone https://github.com/sotoedu/chatGPT.git
+   $ cd chatGPT
    ```
 
 5. Install the requirements:
