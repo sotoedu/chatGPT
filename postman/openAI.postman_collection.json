@@ -1,0 +1,299 @@
+{
+	"info": {
+		"_postman_id": "9d2a3148-a04d-4605-91f4-4b5efd71c20d",
+		"name": "openAI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19461177"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "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",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.openai.com/v1/models",
+					"protocol": "https",
+					"host": [
+						"api",
+						"openai",
+						"com"
+					],
+					"path": [
+						"v1",
+						"models"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create_completion",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "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",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "OpenAI-Organization",
+						"value": "org-RhLYIMjVzpcBC1Tp4WhwVkNV",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"model\": \"text-davinci-003\",\r\n    \"prompt\": \"Say this is a test\",\r\n    \"max_tokens\": 7,\r\n    \"temperature\": 0\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.openai.com/v1/completions",
+					"protocol": "https",
+					"host": [
+						"api",
+						"openai",
+						"com"
+					],
+					"path": [
+						"v1",
+						"completions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Chat",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "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",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "OpenAI-Organization",
+						"value": "org-RhLYIMjVzpcBC1Tp4WhwVkNV",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"model\": \"gpt-3.5-turbo\",\r\n    \"messages\": [{\"role\": \"user\", \"content\": \"Hello!\"}]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.openai.com/v1/chat/completions",
+					"protocol": "https",
+					"host": [
+						"api",
+						"openai",
+						"com"
+					],
+					"path": [
+						"v1",
+						"chat",
+						"completions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "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",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "OpenAI-Organization",
+						"value": "org-RhLYIMjVzpcBC1Tp4WhwVkNV",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"model\": \"text-davinci-edit-001\",\r\n    \"input\": \"What day of the wek is it?\",\r\n    \"instruction\": \"Fix the spelling mistakes\"\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.openai.com/v1/edits",
+					"protocol": "https",
+					"host": [
+						"api",
+						"openai",
+						"com"
+					],
+					"path": [
+						"v1",
+						"edits"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create_image",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "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",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "OpenAI-Organization",
+						"value": "org-RhLYIMjVzpcBC1Tp4WhwVkNV",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"prompt\": \"A cute baby sea otter\",\r\n    \"n\": 2,\r\n    \"size\": \"1024x1024\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.openai.com/v1/images/generations",
+					"protocol": "https",
+					"host": [
+						"api",
+						"openai",
+						"com"
+					],
+					"path": [
+						"v1",
+						"images",
+						"generations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create_image_edit",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "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",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "OpenAI-Organization",
+						"value": "org-RhLYIMjVzpcBC1Tp4WhwVkNV",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/soto/Downloads/popupwin.png"
+						},
+						{
+							"key": "mask",
+							"type": "file",
+							"src": "/C:/Users/soto/Downloads/win.png"
+						},
+						{
+							"key": "prompt",
+							"value": "A cute baby sea otter wearing a beret",
+							"type": "text"
+						},
+						{
+							"key": "n",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "size",
+							"value": "1024x1024",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://api.openai.com/v1/images/edits",
+					"protocol": "https",
+					"host": [
+						"api",
+						"openai",
+						"com"
+					],
+					"path": [
+						"v1",
+						"images",
+						"edits"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
