@@ -14,18 +14,13 @@ url = 'http://localhost:5000/api/text'
 
 headers = {'Content-Type':'application/json; charset=utf-8'}
 
-print('data : ' , temp)
+print('body : ' , temp)
 
 datas = json.dumps(temp)
 
 response = requests.post(url, headers=headers, data=datas)
 
-print(json.loads(response.text))
-
 if response.status_code == 200 :
     print(json.loads(response.text))
 else :
     print(json.loads(response.text))
-
-
-
