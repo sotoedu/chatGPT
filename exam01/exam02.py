@@ -7,7 +7,7 @@ import openai
 
 # load_dotenv()
 
-API_KEY = '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'
+API_KEY = ''
 openai.api_key = API_KEY
 
 response = openai.Completion.create(
