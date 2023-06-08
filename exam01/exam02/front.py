@@ -20,7 +20,8 @@ datas = json.dumps(temp)
 
 response = requests.post(url, headers=headers, data=datas)
 
+message = json.loads(response.text)
+print('result :', message)
+
 if response.status_code == 200 :
-    print(json.loads(response.text))
-else :
-    print(json.loads(response.text))
+    print(f'message : ' , message['result'] )
