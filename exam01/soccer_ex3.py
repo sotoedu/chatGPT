@@ -14,7 +14,6 @@ def generate_soccer_prediction(home_team, away_team):
         max_tokens=14,
         temperature=random.uniform(0.2, 0.8),
         n=10,
-        # log_level="info"
     )
     predictions = [choice.text.strip() for choice in response.choices]
 
@@ -42,5 +41,9 @@ away_team = '대한민국'
 
 # 축구 예상 결과 생성
 prediction = generate_soccer_prediction(home_team, away_team)
+
+# 이탈리아 또는 대한민국으로만 답변하도록 수정
+while prediction != home_team and prediction != away_team :
+    prediction = generate_soccer_prediction(home_team, away_team)
 
 print(f" {home_team} vs {away_team} : {prediction}")
