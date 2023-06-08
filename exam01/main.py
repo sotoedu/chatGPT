@@ -32,17 +32,3 @@ response = openai.Completion.create(
 )
 
 print(response.choices[0].text.strip())
-
-#returns a list of all OpenAI models
-models = openai.Model.list()
-print(models)
-
-# converts the list of OpenAI models to a Pandas DataFrame
-import pandas as pd
-data = pd.DataFrame(models["data"])
-data.head(20)
-
-
-
-
-
