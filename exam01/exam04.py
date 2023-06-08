@@ -3,7 +3,7 @@
 import openai
 
 # OpenAI API 키 설정
-openai.api_key = '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'
+openai.api_key = ''
 
 # ChatGPT에 대화 입력 및 응답 요청 함수
 def chat_with_gpt(prompt):
