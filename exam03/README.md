@@ -34,13 +34,7 @@ This is an example pet name generator app used in the OpenAI API. It uses the [F
    $ pip install -r requirements.txt
    ```
 
-6. Make a copy of the example environment variables file:
-
-   ```bash
-   $ cp .env.example .env
-   ```
-
-7. Add your [API key](https://beta.openai.com/account/api-keys) to the newly created `.env` file.
+6. Add your [API key](https://beta.openai.com/account/api-keys) to the newly created `.env` file.
 
    ```bash
    $ touch .env
@@ -52,7 +46,7 @@ This is an example pet name generator app used in the OpenAI API. It uses the [F
    OPENAI_API_KEY=
    ```
 
-8. Run the app:
+7. Run the app:
 
    ```bash
    $ flask run
