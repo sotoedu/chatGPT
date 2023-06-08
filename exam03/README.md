@@ -42,10 +42,20 @@ This is an example pet name generator app used in the OpenAI API [quickstart tut
 
 7. Add your [API key](https://beta.openai.com/account/api-keys) to the newly created `.env` file.
 
+   ```bash
+   $ touch .env
+   
+   FLASK_APP=app
+   FLASK_ENV=development
+
+   # Once you add your API key below, make sure to not share it with anyone! The API key should remain private.
+   OPENAI_API_KEY=
+   ```
+
 8. Run the app:
 
    ```bash
    $ flask run
    ```
 
-You should now be able to access the app at [http://localhost:5000](http://localhost:5000)! For the full context behind this example app, check out the [tutorial](https://beta.openai.com/docs/quickstart).
+You should now be able to access the app at [http://localhost:5000](http://localhost:5000)! 
