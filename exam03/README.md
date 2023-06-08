@@ -58,4 +58,4 @@ This is an example pet name generator app used in the OpenAI API. It uses the [F
    $ flask run
    ```
 
-You should now be able to access the app at [http://localhost:5000](http://localhost:5000)! 
+You should now be able to access the app at [http://localhost:5000](http://localhost:5000)
