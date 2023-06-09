@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat with GPT-3</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f5f5f5;
+        }
+        #chatbox {
+            width: 500px;
+            height: 600px;
+            border: 1px solid #ddd;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+            overflow: auto;
+        }
+        #userInput {
+            width: 460px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: #fff;
+            cursor: pointer;
+        }
+        p {
+            margin-bottom: 10px;
+        }
+        .user {
+            color: #007BFF;
+        }
+        .gpt-3 {
+            color: #28a745;
+        }
+    </style>
+</head>
+<body>
+    <div id="chatbox"></div>
+    <br>
+    <input id="userInput" type="text" />
+    <button onclick="sendMessage()">Send</button>
+
+    <script>
+        function sendMessage() {
+            var message = document.getElementById('userInput').value;
+            document.getElementById('userInput').value = '';
+
+            var chatbox = document.getElementById('chatbox');
+            chatbox.innerHTML += '<p class="user"><strong>You:</strong> ' + message + '</p>';
+
+            fetch('/api/chat', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({message: message}),
+            })
+            .then(response => response.json())
+            .then(data => {
+                chatbox.innerHTML += '<p class="gpt-3"><strong>GPT-3:</strong> ' + data + '</p>';
+                chatbox.scrollTop = chatbox.scrollHeight;
+            });
+        }
+    </script>
+</body>
+</html>
