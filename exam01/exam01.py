@@ -1,4 +1,4 @@
-# ex2.py
+# exam01.py
 
 import openai
 
